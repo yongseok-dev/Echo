@@ -14,6 +14,13 @@ app.post("/", (req, res) => {
   res.json({ echo: message, ip: clientIP });
 });
 
+app.get("/", (req, res) => {
+  const clientIP = req.ip;
+  console.log(`클라이언트 IP 주소: ${clientIP}`);
+  const message = req.query.message;
+  res.json({ echo: message, ip: clientIP });
+});
+
 app.listen(port, () => {
   console.log(`서버가 http://localhost:${port} 에서 실행 중입니다.`);
 });
