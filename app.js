@@ -5,6 +5,7 @@ const port = 3000;
 
 app.use(cors());
 app.use(express.json());
+app.set("trust proxy", true);
 
 app.post("/", (req, res) => {
   const clientIP = req.ip;
